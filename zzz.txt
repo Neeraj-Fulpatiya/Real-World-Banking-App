@@ -1,0 +1,9 @@
+
+i have usedd the asset predefined folder , in which i had tailwind.config in which i have added
+some extra colors that i will be using within the project
+
+in piublic i have all gthe files or icons or images that iw ill eb usng throughtout theproject
+
+in globalcss which i took fromthe asset and paste to the app directory has lots of modification 
+which haev lots of properties which are predefiuned and can be used to amek our fdevelopment more easier
+== i mean i have laready created lots of utility classes in global css which will help me and save my time
