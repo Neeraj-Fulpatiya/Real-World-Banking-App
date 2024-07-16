@@ -7,3 +7,10 @@ in piublic i have all gthe files or icons or images that iw ill eb usng throught
 in globalcss which i took fromthe asset and paste to the app directory has lots of modification 
 which haev lots of properties which are predefiuned and can be used to amek our fdevelopment more easier
 == i mean i have laready created lots of utility classes in global css which will help me and save my time
+
+
+ *** currency modification k lie utils.ts me new Intl.NumberFormat()ka object bnaya h joki js me phle se tha use use kr k kiya ye
+ bs ye chl ni ra h dekh lean ese
+
+ balance slow increse up becoasuse of react countUp package
+ Doughnut chart ko chart.js ko install kia 
