@@ -2,14 +2,15 @@
  import HeaderBox from '@/components/HeaderBox'
 import TotalBalanceBox from '@/components/TotalBalanceBox';
 import RightSidebar from '@/components/RightSidebar';
- const home = () => {
-  const loggedIn ={firstName:'Neeraj Fulpatiya'};
+import { getLoggedInUser } from '@/lib/actions/user.action';
+ const  home = async () => {
+  const loggedIn =await getLoggedInUser();
    return (
     //  <div>home</div>
      <section className='home'>
 <div className='home-content'>
   <header className='home-header'>
-    <HeaderBox type="greeting" title="Welcome" user={loggedIn?.firstName || 'guest'}
+    <HeaderBox type="greeting" title="Welcome" user={loggedIn?.name || 'guest'}
       subtext="accessa and manage your accont and transacction effeciently"  />
 
 <TotalBalanceBox accounts={[]} totalBanks={1}

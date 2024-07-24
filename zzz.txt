@@ -14,3 +14,42 @@ which haev lots of properties which are predefiuned and can be used to amek our 
 
  balance slow increse up becoasuse of react countUp package
  Doughnut chart ko chart.js ko install kia 
+
+ for the form we have use react hook form and for its validation we have usedd zod 
+ zod is a form validation tool
+
+ 9999 authform m import m dikkt aa skta h dkh lena input k usme
+
+ signup me ssn ky h ptani
+
+ we write 'use server' when we are building the server or working in server znd we use 'use client ' 
+  when wokring for the client
+
+  we use appwrite to create user account
+  we created database in the appwrite with every required collection and attributes ,
+
+  what is "use-server" aall functions exported from the function beneath the use-server are the server action 
+   
+
+   for understadning how to setup the functionality of the appwrite in appwrite .ts file then  just see it from 2:44hr 
+
+   sari login logout ki functionality hmne user.action .ts me bnayi h 
+
+
+   singin k sath mene imagwe nhi di h abi tk
+
+   What is Sentry and why is it important for developers? Sentry is an error 
+   monitoring platform designed to help
+    developers quickly detect, diagnose and resolve problems in their applications.
+
+    we have used sentr for the banking purposes as ther should be no pblm in transaction and all
+    sentry user ka record krti h i kse aaya usme error , uski activity record krta hor kha pr error 
+     aya h bttata h pr code nhi dikhata kyooki banking m wo bhut secure rhna chahiye
+
+     we can also see the user feedback if we have made naything fromm where we can take that
+     it reocrdds all activity and shows it to you with the DoM
+
+     using this we can track almost everything , like from which country we are geting the most 
+      problems in the website , which browser is not respondin ght best , in terms of percentage as well 
+      user experience  trakc it and fix it , it brings everything onto your table
+      
