@@ -27,6 +27,7 @@ import { authFormSchema } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
 import SignUp from '@/app/(auth)/sign-up/page';
 import { getLoggedInUser, signIn, signUp } from '@/lib/actions/user.action';
+import Plaidlink from './Plaidlink';
 
 // const formSchema= z.object({
 //   email:z.string().email(),
@@ -48,27 +49,46 @@ const AuthForm = ({ type }: { type: string }) => {
      password:''
     },
   })
+
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     setIsLoading(true);
-  // Sign up with Appwrite & create plaid token
-      // try{  
-  if(type === 'sign-up') {
-     
-    const newUser = await signUp(data);
 
-    setUser(newUser);
+    try {
+      // Sign up with Appwrite & create plaid token
+      
+      if(type === 'sign-up') {
+        const userData = {
+          firstName: data.firstName!,
+          lastName: data.lastName!,
+          address1: data.address1!,
+          city: data.city!,
+          state: data.state!,
+          postalCode: data.postalCode!,
+          dateOfBirth: data.dateOfBirth!,
+          ssn: data.ssn!,
+          email: data.email,
+          password: data.password
+        }
 
+        const newUser = await signUp(userData);
+
+        setUser(newUser);
+      }
+
+      if(type === 'sign-in') {
+        const response = await signIn({
+          email: data.email,
+          password: data.password,
+        })
+
+        if(response) router.push('/')
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
   }
-  if(type === 'sign-in') {
-    const response = await signIn({
-      email: data.email,
-      password: data.password,
-    })
-
-    if(response) router.push('/')
-  }
-  } 
-  // }
 
   return (
  <section className='auth-form'>
@@ -104,9 +124,11 @@ const AuthForm = ({ type }: { type: string }) => {
        {user ?(
         <div className='flex flex-col gap-4'>
 
+          <Plaidlink user={user} variant="primary"/>
+
         </div>
 
-       ):(
+        ):( 
         <>
            
     <Form {...form}>
@@ -159,7 +181,7 @@ const AuthForm = ({ type }: { type: string }) => {
           </footer>
 
         </>
-       )}
+        )} 
 
  </section>
  
